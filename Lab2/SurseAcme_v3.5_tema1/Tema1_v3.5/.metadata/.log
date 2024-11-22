@@ -1,0 +1,15 @@
+!SESSION 2014-10-08 15:21:53.211 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_38
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ro_RO
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @user.home/AcmeWorkspace -data D:\CRISTINA\cursuri\Arhitecturi software\laboratoareCurente\lab2\Surse_lab3\surse_Acme3.5
+
+!ENTRY org.eclipse.ui 4 4 2014-10-08 15:22:17.816
+!MESSAGE Bad extension specification
+
+!ENTRY org.acmestudio.ui.compatibility 4 0 2014-10-08 15:22:17.846
+!MESSAGE startup class must implement org.eclipse.ui.IStartup
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk.scheduler 4 0 2014-10-08 15:22:18.147
+!MESSAGE The update checker service is not initialized
