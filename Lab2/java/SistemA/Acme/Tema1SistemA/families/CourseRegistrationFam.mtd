@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <family name="CourseRegistrationFam">
+    <userdata key="SaveData">
+      <data date="11/24/24 6:22 PM"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="Connector" name="">
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <component-type name="MergeFilterT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.FilterVisualizationStrategy">
+              <fillColor blue="122" green="201" red="237"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="FilterInputPortT" side="Left"/>
+              <portPlacementRule alignment="Center" portType="FilterOutputPortT" side="Right"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="SplitFilterT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.FilterVisualizationStrategy">
+              <fillColor blue="204" green="199" red="155"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="FilterInputPortT" side="Left"/>
+              <portPlacementRule alignment="Center" portType="FilterOutputPortT" side="Right"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="CourseFilterT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.FilterVisualizationStrategy">
+              <fillColor blue="229" green="179" red="228"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="FilterInputPortT" side="Left"/>
+              <portPlacementRule alignment="Center" portType="FilterOutputPortT" side="Right"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="DataSourceT">
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="DataSinkT">
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="FormatOutputFilter">
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="SortFilter">
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesInputPortT_OutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type InputPortT,OutputPortT" label="Has ports of type InputPortT,OutputPortT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterInputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterInputPortT." label="Component has at least 1 port of type FilterInputPortT."/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeast1portOfTypeFilterOutputPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Component DOES NOT have at least 1 port of type FilterOutputPortT." label="Component has at least 1 port of type FilterOutputPortT."/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <connector-type name="PipeT">
+      <connector name="prototype">
+        <design-rule name="exactly2roles">
+          <userdata key="RuleInfo">
+            <data errMsg="Connector DOES NOT have exactly 2 roles." label="Connector has exactly 2 roles."/>
+          </userdata>
+        </design-rule>
+      </connector>
+    </connector-type>
+    <system name="prototype">
+      <userdata key="connection-patterns">
+        <data>
+          <portConnectionRule connector="Connector" name="">
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          </portConnectionRule>
+        </data>
+      </userdata>
+    </system>
+  </family>
+</AcmeModel>

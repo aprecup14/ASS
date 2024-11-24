@@ -1,0 +1,40 @@
+import $AS_GLOBAL_PATH/families/PipeAndFilter.acme;
+ 
+Family CourseRegistrationFam extends PipeAndFilterFam with {
+
+    Component Type MergeFilterT extends FilterCompT with {
+        Port input2 : FilterInputPortT = new FilterInputPortT extended with {
+
+            Property protocol : string = "char input";
+
+        }
+
+    }
+    Component Type SplitFilterT extends FilterCompT with {
+        Port output2 : FilterOutputPortT = new FilterOutputPortT extended with {
+
+            Property protocol : string = "char output";
+
+        }
+
+    }
+    Component Type CourseFilterT extends FilterCompT with {
+
+    }
+    Component Type DataSourceT extends SourceCompT with {
+
+    }
+    Component Type DataSinkT extends SinkCompT with {
+
+    }
+    Component Type FormatOutputFilter extends FilterCompT with {
+
+    }
+    Component Type SortFilter extends FilterCompT with {
+
+    }
+    Connector Type PipeT extends PipeConnT with {
+
+    }
+}
+
