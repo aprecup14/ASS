@@ -1,0 +1,216 @@
+import families/CourseRegistrationFam.acme;
+ 
+import $AS_GLOBAL_PATH/families/PipeAndFilter.acme;
+ 
+System CourseRegistration : CourseRegistrationFam, PipeAndFilterFam = new CourseRegistrationFam, PipeAndFilterFam extended with {
+
+    Component InputFile : DataSourceT = new DataSourceT extended with {
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component SplitMSE : SplitFilterT = new SplitFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component Course17651 : CourseFilterT = new CourseFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+        Port rejecetdOutput : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component Course21701 : CourseFilterT = new CourseFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+        Port OutputRejectedPort : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component OutputFile : DataSinkT = new DataSinkT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+
+    }
+    Component MergeFilter : MergeFilterT = new MergeFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component MergeRejectedFilter : MergeFilterT = new MergeFilterT extended with {
+        Port output0 : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+        Port input1 : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+
+    }
+    Component RejectedOutputFile : DataSinkT = new DataSinkT extended with {
+        Port input0 : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+
+    }
+    Component Output_Name_Specialization_Formatter_Filter : FilterCompT = new FilterCompT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component Sort_Filter : SortFilter = new SortFilter extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Connector PipeT0 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT1 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT2 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT3 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT4 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT5 : PipeT = new PipeT extended with {
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT6 : PipeT = new PipeT extended with {
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT7 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT8 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT9 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT10 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Attachment InputFile.output to PipeT0.input;
+    Attachment SplitMSE.input to PipeT0.output;
+    Attachment SplitMSE.output to PipeT1.input;
+    Attachment Course17651.input to PipeT1.output;
+    Attachment Course21701.input to PipeT2.output;
+    Attachment SplitMSE.output2 to PipeT2.input;
+    Attachment Course17651.output to PipeT3.input;
+    Attachment Course21701.output to PipeT4.input;
+    Attachment MergeFilter.input to PipeT3.output;
+    Attachment MergeFilter.input2 to PipeT4.output;
+    Attachment MergeFilter.output to PipeT5.input;
+    Attachment RejectedOutputFile.input0 to PipeT6.output;
+    Attachment MergeRejectedFilter.input2 to PipeT7.output;
+    Attachment Course17651.rejecetdOutput to PipeT7.input;
+    Attachment Course21701.OutputRejectedPort to PipeT8.input;
+    Attachment MergeRejectedFilter.input1 to PipeT8.output;
+    Attachment OutputFile.input to PipeT9.output;
+    Attachment Output_Name_Specialization_Formatter_Filter.output to PipeT9.input;
+    Attachment MergeRejectedFilter.output0 to PipeT6.input;
+    Attachment Sort_Filter.input to PipeT5.output;
+    Attachment Sort_Filter.output to PipeT10.input;
+    Attachment Output_Name_Specialization_Formatter_Filter.input to PipeT10.output;
+}
+

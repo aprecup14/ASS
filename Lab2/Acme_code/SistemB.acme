@@ -1,0 +1,175 @@
+import families/CourseRegistrationFam.acme;
+ 
+import $AS_GLOBAL_PATH/families/PipeAndFilter.acme;
+ 
+System CourseRegistration : CourseRegistrationFam, PipeAndFilterFam = new CourseRegistrationFam, PipeAndFilterFam extended with {
+
+    Component InputFile : DataSourceT = new DataSourceT extended with {
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component OutputFile : DataSinkT = new DataSinkT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+
+    }
+    Component Course13456 : CourseFilterT = new CourseFilterT extended with {
+        Port input2 : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port outputTRUE : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+        Port outputFALSE : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component Course12333 : CourseFilterT = new CourseFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component SplitIACD : SplitFilterT = new SplitFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component Course13222 : CourseFilterT = new CourseFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component MergeFilter : MergeFilterT = new MergeFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Component MergeFilter2 : MergeFilterT = new MergeFilterT extended with {
+        Port input : FilterInputPortT = new FilterInputPortT extended with {
+
+        }
+        Port output : FilterOutputPortT = new FilterOutputPortT extended with {
+
+        }
+
+    }
+    Connector PipeT0 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT1 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT2 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT4 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT5 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT6 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT7 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT8 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Connector PipeT9 : PipeT = new PipeT extended with {
+        Role input : DataInRoleT = new DataInRoleT extended with {
+
+        }
+        Role output : DataOutRoleT = new DataOutRoleT extended with {
+
+        }
+
+    }
+    Attachment InputFile.output to PipeT0.input;
+    Attachment SplitIACD.output to PipeT1.input;
+    Attachment Course13222.input to PipeT2.output;
+    Attachment SplitIACD.output2 to PipeT2.input;
+    Attachment Course13222.output to PipeT4.input;
+    Attachment OutputFile.input to PipeT5.output;
+    Attachment MergeFilter2.input2 to PipeT4.output;
+    Attachment MergeFilter2.output to PipeT5.input;
+    Attachment Course13456.input2 to PipeT0.output;
+    Attachment Course13456.outputFALSE to PipeT6.input;
+    Attachment Course12333.input to PipeT6.output;
+    Attachment Course13456.outputTRUE to PipeT7.input;
+    Attachment MergeFilter.input2 to PipeT7.output;
+    Attachment Course12333.output to PipeT8.input;
+    Attachment MergeFilter.input to PipeT8.output;
+    Attachment MergeFilter.output to PipeT9.input;
+    Attachment SplitIACD.input to PipeT9.output;
+    Attachment MergeFilter2.input to PipeT1.output;
+}
