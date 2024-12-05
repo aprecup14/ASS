@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <system name="student_registration">
+    <userdata key="SaveData">
+      <data date="4/15/15 8:11 PM"/>
+    </userdata>
+    <userdata key="vis-information">
+      <data height="374" rotation="0.0" width="832" zOrder="0"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="Connector" name="">
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <userdata key="acme-legend">
+      <data componentsWidth="131" connectorsWidth="155" height="220" layout="4" name="student_registration" othersWidth="149" portsWidth="114" relativeLocation="BELOW" rolesWidth="117" userPos="true" userResize="false" width="856" x="-11" y="325" zOrder="0">
+        <item description="SharedDataCompT" type="SharedDataCompT"/>
+        <item description="PublisherCompT" type="PublisherCompT"/>
+        <item description="SubscriberCompT" type="SubscriberCompT"/>
+        <item description="ListStudents" element="student_registration.ListStudents"/>
+        <item description="ListCoursesCompleted" element="student_registration.ListCoursesCompleted"/>
+        <item description="ListCoursesRegistered" element="student_registration.ListCoursesRegistered"/>
+        <item description="ListStudentsRegistered" element="student_registration.ListStudentsRegistered"/>
+        <item description="RegisterStudents" element="student_registration.RegisterStudents"/>
+        <item description="EventBusConnT" type="EventBusConnT"/>
+        <item description="SharedDataAccessConnT" type="SharedDataAccessConnT"/>
+        <item description="PublishPortT" type="PublishPortT"/>
+        <item description="SubscribePortT" type="SubscribePortT"/>
+        <item description="DataAccessorPort" type="DataAccessorPortT"/>
+        <item description="RepositoryPort" type="RepositoryPortT"/>
+        <item description="PublisherRoleT" type="PublisherRoleT"/>
+        <item description="SubscriberRoleT" type="SubscriberRoleT"/>
+        <item description="RepositoryRole" type="RepositoryRoleT"/>
+        <item description="DataAccessorRole" type="DataAccessorRoleT"/>
+      </data>
+    </userdata>
+    <component name="ClientOutput">
+      <userdata key="vis-information">
+        <data category="component" height="55" rotation="0.0" width="100" x="754" y="125"/>
+      </userdata>
+      <port name="receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="-2" rotation="0.0" x="704" y="123"/>
+        </userdata>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ListCourses">
+      <userdata key="vis-information">
+        <data category="component" height="40" rotation="0.0" width="100" x="284" y="37"/>
+      </userdata>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="-10" rotation="0.0" x="334" y="27"/>
+        </userdata>
+      </port>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="8" rotation="0.0" x="334" y="45"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="-2" rotation="0.0" x="234" y="35"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ListStudentsRegistered">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="167" x="286" y="104"/>
+      </userdata>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="83" relPosY="-14" rotation="0.0" x="369" y="90"/>
+        </userdata>
+      </port>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="83" relPosY="7" rotation="0.0" x="369" y="111"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-84" relPosY="2" rotation="0.0" x="202" y="106"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ListCoursesRegistered">
+      <userdata key="vis-information">
+        <data category="component" height="42" rotation="0.0" width="178" x="292" y="168"/>
+      </userdata>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="89" relPosY="-12" rotation="0.0" x="381" y="156"/>
+        </userdata>
+      </port>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="89" relPosY="5" rotation="0.0" x="381" y="173"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-89" relPosY="-7" rotation="0.0" x="203" y="161"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ListCoursesCompleted">
+      <userdata key="vis-information">
+        <data category="component" height="43" rotation="0.0" width="140" x="289" y="219"/>
+      </userdata>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="70" relPosY="-13" rotation="0.0" x="359" y="206"/>
+        </userdata>
+      </port>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="70" relPosY="7" rotation="0.0" x="359" y="226"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-70" relPosY="-3" rotation="0.0" x="219" y="216"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="RegisterStudents">
+      <userdata key="vis-information">
+        <data category="component" height="43" rotation="0.0" width="124" x="294" y="277"/>
+      </userdata>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="62" relPosY="-8" rotation="0.0" x="356" y="269"/>
+        </userdata>
+      </port>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" height="10" relPosX="62" relPosY="13" rotation="0.0" width="10" x="356" y="290"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-62" relPosY="0" rotation="0.0" x="232" y="277"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="SharedData">
+      <userdata key="vis-information">
+        <data category="component" height="99" rotation="0.0" width="100" x="22" y="101"/>
+      </userdata>
+      <port name="data0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" height="10" relPosX="46" relPosY="-39" rotation="0.0" width="14" x="68" y="62"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="data1">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="-9" rotation="0.0" x="72" y="92"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="data2">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="21" rotation="0.0" x="72" y="122"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="data3">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="10" relPosY="49" rotation="0.0" x="32" y="150"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="data4">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-10" relPosY="49" rotation="0.0" x="12" y="150"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="data">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="8" relPosY="-49" rotation="0.0" x="30" y="52"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesRepositoryPortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ClientInput">
+      <userdata key="vis-information">
+        <data category="component" height="43" rotation="0.0" width="100" x="749" y="-7"/>
+      </userdata>
+      <port name="publish0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="-2" rotation="0.0" x="699" y="-9"/>
+        </userdata>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="ListStudents">
+      <userdata key="vis-information">
+        <data category="component" height="43" rotation="0.0" width="100" x="280" y="-30"/>
+      </userdata>
+      <port name="p_announce0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="8" rotation="0.0" x="330" y="-22"/>
+        </userdata>
+      </port>
+      <port name="p_receive0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="-15" rotation="0.0" x="330" y="-45"/>
+        </userdata>
+      </port>
+      <port name="DataAccessorPort0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="-9" rotation="0.0" x="230" y="-39"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesAnnouncePortT_ReceivePortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type AnnouncePortT,ReceivePortT" label="Has ports of type AnnouncePortT,ReceivePortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <connector name="EventBusT0">
+      <userdata key="vis-information">
+        <data height="375" rotation="0.0" width="14" x="492" y="128"/>
+      </userdata>
+      <role name="PublisherRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="699" y="-9">
+            <bendpoints>
+              <point x="491" y="-10"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT1">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="334" y="45">
+            <bendpoints>
+              <point x="491" y="44"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT2">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="369" y="111">
+            <bendpoints>
+              <point x="491" y="110"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT1">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="704" y="123">
+            <bendpoints>
+              <point x="491" y="122"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT2">
+        <userdata key="vis-information">
+          <data category="role" height="12" rotation="0.0" width="12" x="381" y="156">
+            <bendpoints>
+              <point x="490" y="155"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT3">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="330" y="-22">
+            <bendpoints>
+              <point x="491" y="-23"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT4">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="381" y="173">
+            <bendpoints>
+              <point x="491" y="172"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT5">
+        <userdata key="vis-information">
+          <data category="role" height="14" rotation="0.0" width="14" x="359" y="226">
+            <bendpoints>
+              <point x="491" y="225"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="330" y="-45">
+            <bendpoints>
+              <point x="490" y="-46"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT3">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="334" y="27">
+            <bendpoints>
+              <point x="490" y="26"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT4">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="369" y="90">
+            <bendpoints>
+              <point x="491" y="89"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT5">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="359" y="206">
+            <bendpoints>
+              <point x="491" y="204"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="SubscriberRoleT6">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="356" y="269">
+            <bendpoints>
+              <point x="490" y="267"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="PublisherRoleT6">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="356" y="290">
+            <bendpoints>
+              <point x="491" y="288"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="SharedDataAccessConnT0">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="134" y="-8"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="30" y="52"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="230" y="-39"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="SharedDataAccessConnT1">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="157" y="29"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" height="10" rotation="0.0" width="12" x="68" y="62"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="234" y="35"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="SharedDataAccessConnT2">
+      <userdata key="vis-information">
+        <data height="15" rotation="0.0" width="15" x="145" y="90"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="72" y="92"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="202" y="106"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="SharedDataAccessConnT3">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="146" y="131"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="72" y="122"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="203" y="161"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="SharedDataAccessConnT4">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="142" y="178"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="32" y="150"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="219" y="216"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="SharedDataAccessConnT5">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="136" y="222"/>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="12" y="150"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="232" y="277"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+  </system>
+</AcmeModel>

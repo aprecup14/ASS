@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <family name="SharedDataFam">
+    <userdata key="SaveData">
+      <data date="4/15/15 6:32 PM"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="Connector" name="">
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <component-type name="SharedDataCompT">
+      <component name="prototype">
+        <port name="data">
+          <design-rule name="attachedOnlyToRepositoryRole">
+            <userdata key="RuleInfo">
+              <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+            </userdata>
+          </design-rule>
+        </port>
+        <design-rule name="atLeastTheseTypesRepositoryPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="SharedDataAccessorCompT">
+      <component name="prototype">
+        <port name="access">
+          <design-rule name="attachedOnlyToDataAccessorRole">
+            <userdata key="RuleInfo">
+              <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+            </userdata>
+          </design-rule>
+        </port>
+        <design-rule name="atLeastTheseTypesDataAccessorPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type DataAccessorPortT" label="Has ports of type DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <connector-type name="SharedDataAccessConnT">
+      <connector name="prototype">
+        <role name="access">
+          <design-rule name="attached">
+            <userdata key="RuleInfo">
+              <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+            </userdata>
+          </design-rule>
+          <design-rule name="attachedOnlyToDataAccessorPort">
+            <userdata key="RuleInfo">
+              <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+            </userdata>
+          </design-rule>
+        </role>
+        <role name="repository">
+          <design-rule name="attached">
+            <userdata key="RuleInfo">
+              <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+            </userdata>
+          </design-rule>
+          <design-rule name="attachedOnlyToRepositoryPort">
+            <userdata key="RuleInfo">
+              <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+            </userdata>
+          </design-rule>
+        </role>
+        <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeastTheseTypesRepositoryRoleT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </connector>
+    </connector-type>
+    <system name="prototype">
+      <userdata key="connection-patterns">
+        <data>
+          <portConnectionRule connector="Connector" name="">
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          </portConnectionRule>
+        </data>
+      </userdata>
+    </system>
+  </family>
+</AcmeModel>

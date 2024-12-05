@@ -1,0 +1,22 @@
+import $AS_GLOBAL_PATH/families/ClientServerFam.acme;
+ 
+Family Tiers extends ClientServerFam with {
+
+    Component Type TierNodeT = {
+
+        Property allow : boolean;
+
+        Property host : string;
+
+    }
+    Component Type DataNodeT extends ServerCompT, TierNodeT with {
+
+    }
+    Component Type LogicNodeT extends TierNodeT, ServerCompT, ClientCompT with {
+
+    }
+    Component Type ClientNodeT extends TierNodeT, ClientCompT with {
+
+    }
+}
+

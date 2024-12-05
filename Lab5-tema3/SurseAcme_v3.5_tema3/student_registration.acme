@@ -1,0 +1,237 @@
+import families/SharedDataFam.acme;
+ 
+import $AS_GLOBAL_PATH/families/RepositoryFam.acme;
+ 
+import $AS_GLOBAL_PATH/families/PubSubFam.acme;
+ 
+System student_registration : RepositoryFam, PubSubFam, SharedDataFam = new RepositoryFam, PubSubFam, SharedDataFam extended with {
+
+    Component ClientOutput : SubscriberCompT = new SubscriberCompT extended with {
+        Port receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+
+    }
+    Component ListCourses : SubscriberCompT = new SubscriberCompT extended with {
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Component ListStudentsRegistered : SubscriberCompT, PublisherCompT = new SubscriberCompT, PublisherCompT extended with {
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Component ListCoursesRegistered : SubscriberCompT, PublisherCompT = new SubscriberCompT, PublisherCompT extended with {
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Component ListCoursesCompleted : SubscriberCompT, PublisherCompT = new SubscriberCompT, PublisherCompT extended with {
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Component RegisterStudents : SubscriberCompT, PublisherCompT = new SubscriberCompT, PublisherCompT extended with {
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Component SharedData : SharedDataCompT = new SharedDataCompT extended with {
+        Port data0 : RepositoryPortT = new RepositoryPortT extended with {
+
+        }
+        Port data1 : RepositoryPortT = new RepositoryPortT extended with {
+
+        }
+        Port data2 : RepositoryPortT = new RepositoryPortT extended with {
+
+        }
+        Port data3 : RepositoryPortT = new RepositoryPortT extended with {
+
+        }
+        Port data4 : RepositoryPortT = new RepositoryPortT extended with {
+
+        }
+
+    }
+    Component ClientInput : PublisherCompT = new PublisherCompT extended with {
+        Port publish0 : PublishPortT = new PublishPortT extended with {
+
+        }
+
+    }
+    Component ListStudents : SubscriberCompT, PublisherCompT = new SubscriberCompT, PublisherCompT extended with {
+        Port p_announce0 : PublishPortT = new PublishPortT extended with {
+
+        }
+        Port p_receive0 : SubscribePortT = new SubscribePortT extended with {
+
+        }
+        Port DataAccessorPort0 : DataAccessorPortT = new DataAccessorPortT extended with {
+
+        }
+
+    }
+    Connector EventBusT0 : EventBusConnT = new EventBusConnT extended with {
+        Role PublisherRoleT0 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role PublisherRoleT1 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role PublisherRoleT2 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role SubscriberRoleT1 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role SubscriberRoleT2 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role PublisherRoleT3 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role PublisherRoleT4 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role PublisherRoleT5 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+        Role SubscriberRoleT0 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role SubscriberRoleT3 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role SubscriberRoleT4 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role SubscriberRoleT5 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role SubscriberRoleT6 : SubscriberRoleT = new SubscriberRoleT extended with {
+
+        }
+        Role PublisherRoleT6 : PublisherRoleT = new PublisherRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT0 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT1 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT2 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT3 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT4 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Connector SharedDataAccessConnT5 : SharedDataAccessConnT = new SharedDataAccessConnT extended with {
+        Role repository : RepositoryRoleT = new RepositoryRoleT extended with {
+
+        }
+        Role access : DataAccessorRoleT = new DataAccessorRoleT extended with {
+
+        }
+
+    }
+    Attachment ListStudents.DataAccessorPort0 to SharedDataAccessConnT0.access;
+    Attachment SharedData.data to SharedDataAccessConnT0.repository;
+    Attachment SharedData.data1 to SharedDataAccessConnT2.repository;
+    Attachment ListStudentsRegistered.DataAccessorPort0 to SharedDataAccessConnT2.access;
+    Attachment ListCoursesRegistered.DataAccessorPort0 to SharedDataAccessConnT3.access;
+    Attachment SharedData.data2 to SharedDataAccessConnT3.repository;
+    Attachment ListCoursesCompleted.DataAccessorPort0 to SharedDataAccessConnT4.access;
+    Attachment SharedData.data3 to SharedDataAccessConnT4.repository;
+    Attachment SharedData.data0 to SharedDataAccessConnT1.repository;
+    Attachment ListCourses.DataAccessorPort0 to SharedDataAccessConnT1.access;
+    Attachment SharedData.data4 to SharedDataAccessConnT5.repository;
+    Attachment RegisterStudents.DataAccessorPort0 to SharedDataAccessConnT5.access;
+    Attachment ClientInput.publish0 to EventBusT0.PublisherRoleT0;
+    Attachment ListStudents.p_announce0 to EventBusT0.PublisherRoleT3;
+    Attachment ListCourses.p_announce0 to EventBusT0.PublisherRoleT1;
+    Attachment ListStudentsRegistered.p_announce0 to EventBusT0.PublisherRoleT2;
+    Attachment ListCoursesRegistered.p_announce0 to EventBusT0.PublisherRoleT4;
+    Attachment ListCoursesCompleted.p_announce0 to EventBusT0.PublisherRoleT5;
+    Attachment ClientOutput.receive0 to EventBusT0.SubscriberRoleT1;
+    Attachment ListCoursesRegistered.p_receive0 to EventBusT0.SubscriberRoleT2;
+    Attachment ListStudents.p_receive0 to EventBusT0.SubscriberRoleT0;
+    Attachment ListCourses.p_receive0 to EventBusT0.SubscriberRoleT3;
+    Attachment ListStudentsRegistered.p_receive0 to EventBusT0.SubscriberRoleT4;
+    Attachment ListCoursesCompleted.p_receive0 to EventBusT0.SubscriberRoleT5;
+    Attachment RegisterStudents.p_receive0 to EventBusT0.SubscriberRoleT6;
+    Attachment RegisterStudents.p_announce0 to EventBusT0.PublisherRoleT6;
+}
+

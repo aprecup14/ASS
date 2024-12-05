@@ -1,0 +1,18 @@
+import $AS_GLOBAL_PATH/families/RepositoryFam.acme;
+ 
+Family SharedDataFam extends RepositoryFam with {
+
+    Component Type SharedDataCompT extends RepositoryCompT with {
+      port data : RepositoryPortT = new RepositoryPortT extended with { }
+
+    }
+    Component Type SharedDataAccessorCompT extends DataAccessorCompT with {
+      port access : DataAccessorPortT = new DataAccessorPortT extended with { }
+
+    }
+    Connector Type SharedDataAccessConnT extends DataAccessConnT with {
+      role access : DataAccessorRoleT = new DataAccessorRoleT extended with { }
+      role repository : RepositoryRoleT = new RepositoryRoleT extended with { }
+    }
+}
+

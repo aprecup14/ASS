@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <family name="Tiers">
+    <userdata key="SaveData">
+      <data date="5/12/15 8:14 PM"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="Connector" name="">
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <component-type name="DataNodeT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RoundedRectangleVisualizationStrategy">
+              <fillColor blue="204" green="199" red="155"/>
+            </shape>
+            <label rotation="0">
+              <labelColor blue="0" green="0" red="0"/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="ServerPortT" side="Top"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <component-type name="LogicNodeT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RoundedRectangleVisualizationStrategy">
+              <fillColor blue="135" green="225" red="225"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <component-type name="ClientNodeT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RoundedRectangleVisualizationStrategy">
+              <fillColor blue="156" green="164" red="227"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <system name="prototype">
+      <userdata key="connection-patterns">
+        <data>
+          <portConnectionRule connector="Connector" name="">
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          </portConnectionRule>
+        </data>
+      </userdata>
+    </system>
+  </family>
+</AcmeModel>

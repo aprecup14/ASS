@@ -1,0 +1,49 @@
+import families/Tiers.acme;
+ 
+System student_registration : Tiers = new Tiers extended with {
+
+    Component ClientNode : ClientNodeT = new ClientNodeT extended with {
+        Port call : ClientPortT = new ClientPortT extended with {
+
+        }
+
+    }
+    Component LogicNode : LogicNodeT = new LogicNodeT extended with {
+        Port response : ServerPortT = new ServerPortT extended with {
+
+        }
+        Port call : ClientPortT = new ClientPortT extended with {
+
+        }
+
+    }
+    Component DataNode : DataNodeT = new DataNodeT extended with {
+        Port response : ServerPortT = new ServerPortT extended with {
+
+        }
+
+    }
+    Connector conn : ClientServerConnT = new ClientServerConnT extended with {
+        Role client : ClientRoleT = new ClientRoleT extended with {
+
+        }
+        Role server : ServerRoleT = new ServerRoleT extended with {
+
+        }
+
+    }
+    Connector conn0 : ClientServerConnT = new ClientServerConnT extended with {
+        Role client : ClientRoleT = new ClientRoleT extended with {
+
+        }
+        Role server : ServerRoleT = new ServerRoleT extended with {
+
+        }
+
+    }
+    Attachment ClientNode.call to conn.client;
+    Attachment LogicNode.response to conn.server;
+    Attachment LogicNode.call to conn0.client;
+    Attachment DataNode.response to conn0.server;
+}
+
