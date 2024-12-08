@@ -48,7 +48,7 @@ public class Course {
      * Lista ce contine studentii inscrisi la acest curs. Elementele din lista sunt
      * obiecte de tip <code>Student</code> ce reprezinta studentii inscrisi.
     */
-    protected ArrayList vRegistered;
+    protected ArrayList<Student> vRegistered;
 
     /**
      * Construire obiect de tip curs prin parsarea sirului de intrare. Sirul <code>sInput</code> este
@@ -79,7 +79,7 @@ public class Course {
         }
 
         // Pregatire pentru memorarea studentilor ce se vor inscrie la acest curs.
-        this.vRegistered = new ArrayList();
+        this.vRegistered = new ArrayList<Student>();
     }
 
     /**
@@ -131,7 +131,7 @@ public class Course {
       * @return studentii inregistrati la acest curs ca <code>ArrayList</code> de
       * obiecte de tip <code>Students</code>. 
       */
-    public ArrayList getRegisteredStudents() {
+    public ArrayList<Student> getRegisteredStudents() {
         return this.vRegistered;
     }
 
