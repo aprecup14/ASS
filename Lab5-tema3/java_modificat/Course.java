@@ -5,6 +5,7 @@
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.util.stream.IntStream;
 
 
 /**
@@ -143,6 +144,21 @@ public class Course {
      */
     public void registerStudent(Student objStudent) {
         this.vRegistered.add(objStudent);
+    }
+
+    /**
+     * Remove student from course registrations.
+     *
+     * @param objStudent the reference to the student to unregister.
+     */
+    public void removeStudent(Student objStudent) {
+        Object[] students = this.vRegistered.toArray();
+        int index = IntStream.range(0, this.vRegistered.size()).map(i -> this.vRegistered.size() - i - 1).filter(i -> ((Student) students[i]).sSID == objStudent.sSID).findFirst().orElse(-1);
+        if (index == -1){
+            return;
+        }
+
+        this.vRegistered.remove(index);
     }
 
     /**

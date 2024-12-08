@@ -71,6 +71,16 @@ public class EventBus {
     public static final int EV_REGISTER_STUDENT = 6;
 
     /**
+     * Definita evenimentului asociat comenzii #7 : verificarea daca un curs este suprasolicitat.
+     */
+    public static final int EV_CHECK_COURSE_OVERBOOKED = 7;
+
+    /**
+     * Definitia evenimentului pentru inceperea validarii unei inscrieri.
+     */
+    public static final int EV_VALIDATE_REGISTRATION = 8;
+
+    /**
      * Numarul evenimentelor definite.
      */
     public static final int MAX_NUM_EVENTS  = 100;

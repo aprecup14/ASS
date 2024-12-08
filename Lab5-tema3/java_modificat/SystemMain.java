@@ -4,6 +4,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -11,6 +12,7 @@ import java.io.IOException;
  */
 class SystemMain {
 
+	private final static String LOG_FILE_PATH = "./logs.txt";
 	/**
 	 * Creaza componentele si porneste sistemul. 
 	 * Se lanseaza cu doi parametri: 
@@ -36,6 +38,12 @@ class SystemMain {
 		if (new File(courseFileName).exists() == false) {
 			System.err.println("Could not find " + courseFileName);
 			System.exit(1);
+		}
+
+		try (FileWriter writer = new FileWriter(LOG_FILE_PATH, true)){
+			writer.write(String.format("%s*******************New execution started*******************", System.lineSeparator()));
+		} catch(Exception e){
+			e.printStackTrace();
 		}
 
 		// Initializarea magistralei de evenimente.
@@ -75,11 +83,28 @@ class SystemMain {
 				new RegisterStudentHandler(
 					db,
 					EventBus.EV_REGISTER_STUDENT,
-					EventBus.EV_SHOW);
-
+					EventBus.EV_VALIDATE_REGISTRATION);
+			CheckCourseOverbookedHandler objCommandEventHandler7 =
+					new CheckCourseOverbookedHandler(
+						db,
+						EventBus.EV_CHECK_COURSE_OVERBOOKED,
+						EventBus.EV_SHOW);
+			ValidatetRegistrationHandler ValidateRegistrationEventHandler =
+						new ValidatetRegistrationHandler(
+							db,
+							EventBus.EV_VALIDATE_REGISTRATION,
+							EventBus.EV_SHOW);
 			ClientInput objClientInput = new ClientInput();
-			ClientOutput objClientOutput = new ClientOutput();
-
+			// Afisarea parametrului event (un sir de caractere) pe stdout.
+			ClientOutput objClientOutputInTerminal = new ClientOutput((param) -> System.out.println((String) param));
+			// Afisarea parametrului event (un sir de caractere) in fisierul "logs.txt".
+			ClientOutput objClientOutputInLogFile = new ClientOutput((param) ->  {
+				try (FileWriter writer = new FileWriter(LOG_FILE_PATH, true)){
+					writer.write((String) param);
+				} catch(IOException e){
+					e.printStackTrace();
+				}
+			});
 			// Lansarea sistemului.
 			objClientInput.start();
 		} catch (FileNotFoundException e) {

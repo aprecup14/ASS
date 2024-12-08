@@ -174,4 +174,21 @@ public class DataBase {
             objCourse.registerStudent(objStudent);
         }
     }
+
+    /**
+     * Realizarea unei stergeri de la inscrierile la curs.
+     * @param  sSID ID student ce trebuie sters.
+     * @param  sCID ID curs la care se face stergerea.
+     */
+    public void removeARegistration(String sSID, String sCID) {
+        // Gasirea inregistrarilor student si curs.
+        Student objStudent = this.getStudentRecord(sSID);
+        Course  objCourse  = this.getCourseRecord(sCID);
+
+        // Realizarea inscrierii.
+        if (objStudent != null && objCourse != null) {
+            objStudent.removeCourse(objCourse);
+            objCourse.removeStudent(objStudent);
+        }
+    }
 }

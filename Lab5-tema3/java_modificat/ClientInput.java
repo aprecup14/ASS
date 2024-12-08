@@ -36,6 +36,7 @@ public class ClientInput extends Thread {
                 EventBus.announce(EventBus.EV_SHOW, "4) Lista cursurilor la care e inscris un student");
                 EventBus.announce(EventBus.EV_SHOW, "5) Lista cursurilor absolvite de un student");
                 EventBus.announce(EventBus.EV_SHOW, "6) Inscriere student la un curs");
+                EventBus.announce(EventBus.EV_SHOW, "7) Este suprasolicitat cursul?");
                 EventBus.announce(EventBus.EV_SHOW, "x) Exit");
                 EventBus.announce(EventBus.EV_SHOW, "\nSelectati o optiune si apasati return >> ");
                 String sChoice = objReader.readLine().trim();
@@ -104,6 +105,19 @@ public class ClientInput extends Thread {
                     // cu transmitere ID student si ID curs.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_REGISTER_STUDENT, sSID + " " + sCID);
+                    continue;
+                }
+
+                // Executia comenzii 6: Inregistrare student la un curs.
+                if (sChoice.equals("7")) {
+                    // Preluare ID student si ID curs de la utilizator.
+                    EventBus.announce(EventBus.EV_SHOW, "\nIndicati ID curs si apasati return >> ");
+                    String sCID = objReader.readLine().trim();
+                    
+                    // Anuntarea evenimentului asociat comenzii #5,
+                    // cu transmitere ID student si ID curs.
+                    EventBus.announce(EventBus.EV_SHOW, "\n");
+                    EventBus.announce(EventBus.EV_CHECK_COURSE_OVERBOOKED, sCID);
                     continue;
                 }
 

@@ -15,15 +15,17 @@ import java.util.Observer;
  */
 
 public class ClientOutput implements Observer {
+    private IOutputStrategy outputStrategy;
 
     /**
      * Construieste o componenta client de iesire. 
      * Noua componenta se inregistreaza pentru receptionarea evenimentelor de tip SHOW.
      */
 
-    public ClientOutput() {
+    public ClientOutput(IOutputStrategy outputStrategy) {
         // Inregistrare cu evenimente SHOW.
         EventBus.subscribeTo(EventBus.EV_SHOW, this);
+        this.outputStrategy = outputStrategy;
     }
 
     /**
@@ -35,7 +37,6 @@ public class ClientOutput implements Observer {
      * @param param un obiect parametru al evenimentului. (va fi "cast" la tipul de date      * corespunzator
      */
     public void update(Observable event, Object param) {
-        // Afisarea parametrului event (un sir de caractere) pe stdout.
-        System.out.println((String) param);
+        this.outputStrategy.execute(param);
     }
 }

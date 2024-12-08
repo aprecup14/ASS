@@ -1,0 +1,58 @@
+
+*******************New execution started*******************
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+123456789 Vasile Carmen IS 1 05610 17651 17653
+012345678 Georgescu Anca IS 0 46921 05610 17652 17651 17653 17654
+145643133 Raicu Horia IS 3 05610 17651
+901234567 Ionescu Iulian IS 2 46732 46814 17652 17651
+890123456 Iftode Diana IS 3 17653 17654
+812998191 Vianu Dan IS 4 05610
+121231422 Popa Irina IS 0 17652 17651 17653 17654
+789012345 Ichim Dragos IS 0 17651
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+17651 LU 1620 1750 Cicortas Tehnologii workflow
+17652 MA 1800 1930 Dragan Modele si metode formale in ingineria software
+17653 MI 1800 1930 Sandru Procese si management in ingineria software
+17654 MI 1800 1930 Fortis Metode distribuite si tehnologii bazate pe XML
+17655 JO 1800 1930 Mindruta Arhitecturi pentru sisteme software
+17656 VI 1800 1930 Petcu Sisteme distribuite
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID curs si apasati return >> 
+Cursul Tehnologii workflow nu este suprasolicitat!
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID student si apasati return >> 
+Indicati ID curs si apasati return >> 
+Inregistrare la curs validata!
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID student si apasati return >> 
+Indicati ID curs si apasati return >> 
+Nu se poate realiza inscrierea la cursul Sisteme distribuite a studentului Vasile Carmen datorita fondurilor insuficiente.
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID student si apasati return >> 
+17651 LU 1620 1750 Cicortas Tehnologii workflow
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID student si apasati return >> 
+Indicati ID curs si apasati return >> 
+Conflicte la inscrierea la cursul Tehnologii workflow pentru studentul Vasile Carmen.
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 
+Indicati ID student si apasati return >> 
+17651 LU 1620 1750 Cicortas Tehnologii workflow
+Sistem inscriere studenti
+1) Lista studenti2) Lista cursuri3) Lista studentilor inscrisi la un curs4) Lista cursurilor la care e inscris un student5) Lista cursurilor absolvite de un student6) Inscriere student la un curs7) Este suprasolicitat cursul?x) Exit
+Selectati o optiune si apasati return >> 

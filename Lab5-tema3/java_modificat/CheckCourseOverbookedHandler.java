@@ -1,19 +1,9 @@
-        // Construirea listei cu informatiile despre cursuri si returnarea ei.
-
-
-/**
- * @(#)RegisterStudentHandler.java
- */
-
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-
-/**
- * Handler pentru evenimentul "Inscriere student la un curs".
- */
-public class RegisterStudentHandler extends CommandEventHandler {
-
+public class CheckCourseOverbookedHandler extends CommandEventHandler {
+    // Cand un curs are trei studenti sau mai mult este considerat suprasolicitat.
+    private final int OVERBOOKED_AT_NUM_STUDENTS = 3;
     /**
      * Construirea handler-lui pentru evenimentul "Inscriere student la un curs".
      *
@@ -21,7 +11,7 @@ public class RegisterStudentHandler extends CommandEventHandler {
      * @param iCommandEvCode codul evenimentului pentru receptionarea comenzilor de procesat
      * @param iOutputEvCode codul evenimentului de iesire, pentru transmiterea rezultatului procesarii comenzii
      */
-    public RegisterStudentHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
+    public CheckCourseOverbookedHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
         super(objDataBase, iCommandEvCode, iOutputEvCode);
     }
 
@@ -34,11 +24,18 @@ public class RegisterStudentHandler extends CommandEventHandler {
     protected String execute(String param) {
         // Parsarea parametrilor.
         StringTokenizer objTokenizer = new StringTokenizer(param);
-        String sSID     = objTokenizer.nextToken();
         String sCID     = objTokenizer.nextToken();
 
-        // Cerere validata. Inscriere student la curs.
-        this.objDataBase.makeARegistration(sSID, sCID);
-        return String.format("%s %s", sSID, sCID);
+        // Preluarea inregistrarilor despre curs.
+        Course objCourse = this.objDataBase.getCourseRecord(sCID);
+        if (objCourse == null) {
+            return "ID curs inexistent";
+        }
+
+        if (objCourse.vRegistered.size() >= this.OVERBOOKED_AT_NUM_STUDENTS){
+            return String.format("Cursul %s este suprasolicitat!", objCourse.sName);
+        }
+
+        return String.format("Cursul %s nu este suprasolicitat!", objCourse.sName);        
     }
 }

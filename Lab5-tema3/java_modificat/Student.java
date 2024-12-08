@@ -4,7 +4,9 @@
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
+import java.util.stream.IntStream;
 
 
 /**
@@ -40,7 +42,7 @@ public class Student {
      * Lista cursurilor la care este inscris studentul. Elementele listei sunt
      * obiecte de tip <code>Course</code>, reprezentand cursurile la care s-a inscris studentul.
      */
-    protected ArrayList vRegistered;
+    protected ArrayList<Course> vRegistered;
     
     /**
      * Balanta contului studentului.
@@ -131,6 +133,24 @@ public class Student {
      */
     public void registerCourse(Course objCourse) {
         this.vRegistered.add(objCourse);
+        // Consideram costul inscrierii la un curs ca fiind 1.
+        this.iBalance--;
+    }
+
+    /**
+     * Remove registration from a course.
+     *
+     * @param objCourse the reference to the course object to unregister for.
+     */
+    public void removeCourse(Course objCourse) {
+        Object[] courses = this.vRegistered.toArray();
+        int index = IntStream.range(0, this.vRegistered.size()).map(i -> this.vRegistered.size() - i - 1).filter(i -> ((Course) courses[i]).sCID == objCourse.sCID).findFirst().orElse(-1);
+        if (index == -1){
+            return;
+        }
+
+        this.vRegistered.remove(index);
+        this.iBalance++;
     }
 
     /**
