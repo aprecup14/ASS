@@ -81,6 +81,11 @@ public class EventBus {
     public static final int EV_VALIDATE_REGISTRATION = 8;
 
     /**
+     * Definitia evenimentului pentru a valida sold-ul studentului.
+     */
+    public static final int EV_VALIDATE_STUDENT_BALANCE = 9;
+
+    /**
      * Numarul evenimentelor definite.
      */
     public static final int MAX_NUM_EVENTS  = 100;

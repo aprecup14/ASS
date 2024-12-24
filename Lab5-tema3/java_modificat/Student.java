@@ -134,7 +134,7 @@ public class Student {
     public void registerCourse(Course objCourse) {
         this.vRegistered.add(objCourse);
         // Consideram costul inscrierii la un curs ca fiind 1.
-        this.iBalance--;
+        this.iBalance -= ValidateStudentBalanceHandler.COURSE_PRICE;
     }
 
     /**

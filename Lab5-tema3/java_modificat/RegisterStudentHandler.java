@@ -5,10 +5,6 @@
  * @(#)RegisterStudentHandler.java
  */
 
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-
-
 /**
  * Handler pentru evenimentul "Inscriere student la un curs".
  */
@@ -33,12 +29,17 @@ public class RegisterStudentHandler extends CommandEventHandler {
      */
     protected String execute(String param) {
         // Parsarea parametrilor.
-        StringTokenizer objTokenizer = new StringTokenizer(param);
-        String sSID     = objTokenizer.nextToken();
-        String sCID     = objTokenizer.nextToken();
+        StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+        String sSID     = info.getStudentId();
+        String sCID     = info.getCourseId();
+
+        if (info.hasError()){
+            return info.toString();
+        }
 
         // Cerere validata. Inscriere student la curs.
         this.objDataBase.makeARegistration(sSID, sCID);
-        return String.format("%s %s", sSID, sCID);
+
+        return StudentRegistrationFormat.CreateValid(sSID, sCID).toString();
     }
 }

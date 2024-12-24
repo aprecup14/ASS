@@ -1,15 +1,6 @@
-// Construirea listei cu informatiile despre cursuri si returnarea ei.
+public class ValidateStudentBalanceHandler extends CommandEventHandler {
+    public static final Integer COURSE_PRICE = 1;
 
-/**
- * @(#)RegisterStudentHandler.java
- */
-
-import java.util.ArrayList;
-
-/**
- * Handler pentru evenimentul "Inscriere student la un curs".
- */
-public class ValidatetRegistrationHandler extends CommandEventHandler {
     /**
      * Construirea handler-lui pentru evenimentul "Inscriere student la un curs".
      *
@@ -19,7 +10,7 @@ public class ValidatetRegistrationHandler extends CommandEventHandler {
      * @param iOutputEvCode  codul evenimentului de iesire, pentru transmiterea
      *                       rezultatului procesarii comenzii
      */
-    public ValidatetRegistrationHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
+    public ValidateStudentBalanceHandler(DataBase objDataBase, int iCommandEvCode, int iOutputEvCode) {
         super(objDataBase, iCommandEvCode, iOutputEvCode);
     }
 
@@ -31,8 +22,14 @@ public class ValidatetRegistrationHandler extends CommandEventHandler {
      */
     protected String execute(String param) {
         StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+
+        if (info.hasError()) {
+            return info.toString();
+        }
+
         String studentId = info.getStudentId();
         String courseId = info.getCourseId();
+
         // Preluarea inregistrarilor despre student si curs.
         Student objStudent = this.objDataBase.getStudentRecord(studentId);
         Course objCourse = this.objDataBase.getCourseRecord(courseId);
@@ -43,16 +40,10 @@ public class ValidatetRegistrationHandler extends CommandEventHandler {
             return StudentRegistrationFormat.CreateInvalid(studentId, courseId, "ID curs inexistent").toString();
         }
 
-        // Verificare conflicte intre cursul dat si orice alt curs la care studentul
-        // este inscris.
-        ArrayList vCourse = objStudent.getRegisteredCourses();
-        for (int i = 0; i < vCourse.size(); i++) {
-            if (((Course) vCourse.get(i)).conflicts(objCourse)) {
-                // Exista conflict.
-                return StudentRegistrationFormat.CreateInvalid(studentId, courseId, String.format(
-                        "Conflicte la inscrierea la cursul %s pentru studentul %s", objCourse.sName, objStudent.sName))
-                        .toString();
-            }
+        if (objStudent.iBalance < COURSE_PRICE) {
+            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, String.format(
+                    "Nu se poate realiza inscrierea la cursul %s a studentului %s datorita fondurilor insuficiente",
+                    objCourse.sName, objStudent.sName)).toString();
         }
 
         return StudentRegistrationFormat.CreateValid(studentId, courseId).toString();

@@ -1,28 +1,29 @@
+
 /**
  * @(#)ClientInput.java
  */
 
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-
 /**
- * Clasa reprezinta o componenta client de intrare, care este responsabila 
- * cu preluarea intrarilor de la utilizator si transmiterea evenimentelor 
- * corespunzatoare comenzilor date de acesta. Aceste evenimente asociate comenzilor 
- * pot avea parametri de tip sir de caractere care sunt transferati impreuna cu evenimentul. 
+ * Clasa reprezinta o componenta client de intrare, care este responsabila
+ * cu preluarea intrarilor de la utilizator si transmiterea evenimentelor
+ * corespunzatoare comenzilor date de acesta. Aceste evenimente asociate
+ * comenzilor
+ * pot avea parametri de tip sir de caractere care sunt transferati impreuna cu
+ * evenimentul.
  * Mai multi parametri sunt concatenati intr-un singur sir, separati cu spatii.
  */
 public class ClientInput extends Thread {
 
     /**
-     * Continuu sunt preluate intrari de la utilizator si 
-     * sunt anuntate evenimente asociate comenzilor. 
-     * Anunta, de asemenea, evenimente de afisare (show) 
+     * Continuu sunt preluate intrari de la utilizator si
+     * sunt anuntate evenimente asociate comenzilor.
+     * Anunta, de asemenea, evenimente de afisare (show)
      * pentru a solicita afisarea prompt-urilor de utilizare.
      */
-    public void run() { 
+    public void run() {
         try {
             // Creare buffered reader utilizand fluxul de intrare al sistemului.
             BufferedReader objReader = new BufferedReader(new InputStreamReader(System.in));
@@ -36,7 +37,6 @@ public class ClientInput extends Thread {
                 EventBus.announce(EventBus.EV_SHOW, "4) Lista cursurilor la care e inscris un student");
                 EventBus.announce(EventBus.EV_SHOW, "5) Lista cursurilor absolvite de un student");
                 EventBus.announce(EventBus.EV_SHOW, "6) Inscriere student la un curs");
-                EventBus.announce(EventBus.EV_SHOW, "7) Este suprasolicitat cursul?");
                 EventBus.announce(EventBus.EV_SHOW, "x) Exit");
                 EventBus.announce(EventBus.EV_SHOW, "\nSelectati o optiune si apasati return >> ");
                 String sChoice = objReader.readLine().trim();
@@ -49,8 +49,8 @@ public class ClientInput extends Thread {
                     continue;
                 }
 
-               // Executia comenzii 2: Lista cursuri.
-                 if (sChoice.equals("2")) {
+                // Executia comenzii 2: Lista cursuri.
+                if (sChoice.equals("2")) {
                     // Anuntarea evenimentului asociat comenzii #2.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_LIST_ALL_COURSES, null);
@@ -62,7 +62,7 @@ public class ClientInput extends Thread {
                     // Preluare ID curs de la utilizator.
                     EventBus.announce(EventBus.EV_SHOW, "\nIndicati ID curs si apasati return >> ");
                     String sCID = objReader.readLine().trim();
-                    
+
                     // Anuntarea evenimentului asociat comenzii #3, cu transmitere ID curs.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_LIST_STUDENTS_REGISTERED, sCID);
@@ -100,24 +100,12 @@ public class ClientInput extends Thread {
                     String sSID = objReader.readLine().trim();
                     EventBus.announce(EventBus.EV_SHOW, "\nIndicati ID curs si apasati return >> ");
                     String sCID = objReader.readLine().trim();
-                    
-                    // Anuntarea evenimentului asociat comenzii #5,
-                    // cu transmitere ID student si ID curs.
-                    EventBus.announce(EventBus.EV_SHOW, "\n");
-                    EventBus.announce(EventBus.EV_REGISTER_STUDENT, sSID + " " + sCID);
-                    continue;
-                }
 
-                // Executia comenzii 6: Inregistrare student la un curs.
-                if (sChoice.equals("7")) {
-                    // Preluare ID student si ID curs de la utilizator.
-                    EventBus.announce(EventBus.EV_SHOW, "\nIndicati ID curs si apasati return >> ");
-                    String sCID = objReader.readLine().trim();
-                    
-                    // Anuntarea evenimentului asociat comenzii #5,
+                    // Anuntarea evenimentului asociat comenzii #6,
                     // cu transmitere ID student si ID curs.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
-                    EventBus.announce(EventBus.EV_CHECK_COURSE_OVERBOOKED, sCID);
+                    EventBus.announce(EventBus.EV_VALIDATE_REGISTRATION,
+                            StudentRegistrationFormat.CreateValid(sSID, sCID).toString());
                     continue;
                 }
 
@@ -129,8 +117,7 @@ public class ClientInput extends Thread {
 
             // Eliberarea resurselor.
             objReader.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // Afisarea informatiilor pentru depanare.
             e.printStackTrace();
             System.exit(1);
