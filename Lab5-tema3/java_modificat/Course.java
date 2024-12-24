@@ -109,7 +109,8 @@ public class Course {
         // Conflict de tip "suprapunere de ore intre doua cursuri".
         for (int i=0; i<this.sDays.length(); i++) {
             for (int j=0; j<objCourse.sDays.length(); j++) {
-                if (this.sDays.regionMatches(i, objCourse.sDays, j, 1)) {
+                // Rezolvat bug care aparea atunci cand zilele incepeau cu aceasi litera. eg. MA si MI erau considerate una si aceeasi zi.
+                if (this.sDays.regionMatches(i, objCourse.sDays, j, 2)) {
                     return (this.iStart <= objCourse.iStart && objCourse.iStart < this.iStop)
                         || (objCourse.iStart <= this.iStart && this.iStart < objCourse.iStop) 
                         ? true : false;
