@@ -30,17 +30,17 @@ public class ValidatetRegistrationHandler extends CommandEventHandler {
      * @return sir de caractere - rezultat procesare comanda
      */
     protected String execute(String param) {
-        StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+        StudentRegistrationEventParam info = StudentRegistrationEventParam.From(param);
         String studentId = info.getStudentId();
         String courseId = info.getCourseId();
         // Preluarea inregistrarilor despre student si curs.
         Student objStudent = this.objDataBase.getStudentRecord(studentId);
         Course objCourse = this.objDataBase.getCourseRecord(courseId);
         if (objStudent == null) {
-            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, "ID student inexistent").toString();
+            return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, "ID student inexistent").toString();
         }
         if (objCourse == null) {
-            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, "ID curs inexistent").toString();
+            return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, "ID curs inexistent").toString();
         }
 
         // Verificare conflicte intre cursul dat si orice alt curs la care studentul
@@ -49,12 +49,12 @@ public class ValidatetRegistrationHandler extends CommandEventHandler {
         for (int i = 0; i < vCourse.size(); i++) {
             if (((Course) vCourse.get(i)).conflicts(objCourse)) {
                 // Exista conflict.
-                return StudentRegistrationFormat.CreateInvalid(studentId, courseId, String.format(
+                return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, String.format(
                         "Conflicte la inscrierea la cursul %s pentru studentul %s", objCourse.sName, objStudent.sName))
                         .toString();
             }
         }
 
-        return StudentRegistrationFormat.CreateValid(studentId, courseId).toString();
+        return StudentRegistrationEventParam.CreateValid(studentId, courseId).toString();
     }
 }

@@ -21,7 +21,7 @@ public class ValidateStudentBalanceHandler extends CommandEventHandler {
      * @return sir de caractere - rezultat procesare comanda
      */
     protected String execute(String param) {
-        StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+        StudentRegistrationEventParam info = StudentRegistrationEventParam.From(param);
 
         if (info.hasError()) {
             return info.toString();
@@ -34,18 +34,18 @@ public class ValidateStudentBalanceHandler extends CommandEventHandler {
         Student objStudent = this.objDataBase.getStudentRecord(studentId);
         Course objCourse = this.objDataBase.getCourseRecord(courseId);
         if (objStudent == null) {
-            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, "ID student inexistent").toString();
+            return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, "ID student inexistent").toString();
         }
         if (objCourse == null) {
-            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, "ID curs inexistent").toString();
+            return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, "ID curs inexistent").toString();
         }
 
         if (objStudent.iBalance < COURSE_PRICE) {
-            return StudentRegistrationFormat.CreateInvalid(studentId, courseId, String.format(
+            return StudentRegistrationEventParam.CreateInvalid(studentId, courseId, String.format(
                     "Nu se poate realiza inscrierea la cursul %s a studentului %s datorita fondurilor insuficiente",
                     objCourse.sName, objStudent.sName)).toString();
         }
 
-        return StudentRegistrationFormat.CreateValid(studentId, courseId).toString();
+        return StudentRegistrationEventParam.CreateValid(studentId, courseId).toString();
     }
 }

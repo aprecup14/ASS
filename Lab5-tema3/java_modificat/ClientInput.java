@@ -105,7 +105,7 @@ public class ClientInput extends Thread {
                     // cu transmitere ID student si ID curs.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_VALIDATE_REGISTRATION,
-                            StudentRegistrationFormat.CreateValid(sSID, sCID).toString());
+                            StudentRegistrationEventParam.CreateValid(sSID, sCID).toString());
                     continue;
                 }
 

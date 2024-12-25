@@ -29,7 +29,7 @@ public class RegisterStudentHandler extends CommandEventHandler {
      */
     protected String execute(String param) {
         // Parsarea parametrilor.
-        StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+        StudentRegistrationEventParam info = StudentRegistrationEventParam.From(param);
         String sSID     = info.getStudentId();
         String sCID     = info.getCourseId();
 
@@ -40,6 +40,6 @@ public class RegisterStudentHandler extends CommandEventHandler {
         // Cerere validata. Inscriere student la curs.
         this.objDataBase.makeARegistration(sSID, sCID);
 
-        return StudentRegistrationFormat.CreateValid(sSID, sCID).toString();
+        return StudentRegistrationEventParam.CreateValid(sSID, sCID).toString();
     }
 }

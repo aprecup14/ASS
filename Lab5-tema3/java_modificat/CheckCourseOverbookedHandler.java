@@ -23,7 +23,7 @@ public class CheckCourseOverbookedHandler extends CommandEventHandler {
      */
     protected String execute(String param) {
         // Parsarea parametrilor.
-        StudentRegistrationFormat info = StudentRegistrationFormat.From(param);
+        StudentRegistrationEventParam info = StudentRegistrationEventParam.From(param);
 
         if (info.hasError()) {
             return info.toString();
